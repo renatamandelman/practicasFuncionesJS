@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        var cantante = prompt("ingresar un cantante de trap");
+        switch(cantante){
+            case "duki":
+            document.write("givenchy");
+            break;
+            case "khea":
+                document.write("wacha");
+            break;
+            case "trueno":
+            docuement.write("dance crip");
+            break;
+            default:
+            docuement.write("no existe");
+        }
+    </script> -->
+    <script>
+        /* Crear un program que le solicite al usuario dos numeros, 
+       luego hacer una funcion que devuelva
+       cual es el mayor */
+        function mayor(num1, num2) {
+            var respuesta;
+
+            if (num1 > num2) {
+                respuesta = num1;
+            } else if (num1 == num2) {
+                respuesta = "no hay mayor";
+            } else {
+                respuesta = num2;
+            }
+            return respuesta;
+        }
+        var num1 = parseInt(prompt("Ingrese el primero numero"));
+        var num2 = parseInt(prompt("ingrese un segundo numero"));
+        document.write(mayor(num1, num2));
+    </script>
+</body>
+
+</html>

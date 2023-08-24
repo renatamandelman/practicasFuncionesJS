@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Hacer un código que permita encriptar y desencriptar contraseñas, reemplazando:
+• a por 4
+• e por 3
+• i por 1
+• o por o (cero)
+• u por 2
+Pedir al usuarto que ingrese una contraseña, y mostrarla encriptada y desencriptada.
+Validar que en la contraseña no se incluyan números menores a 5, 
+que se incluya al menos un signo especial "e","$" o "#" 
+y tenga por lo menos 8 caracteres. */
+    var password;
+    var validarNums;
+    var signo;
+    var signo2;
+    var signo3;
+    var contraOk;
+    var numOk;
+    
+        do {
+            password = prompt("Ingrese su contraseña ");
+            for ( var i = 0; i < 5 ; i++){
+            numOk = false;
+            validarNums = password.indexOf(i);
+            if(validarNums == -1){
+                numOk = true;
+            }
+            }
+            signo = password.indexOf("@");
+            signo2 = password.indexOf("$");
+            signo3 = password.indexOf("#");
+           
+            if((numOk) && (password.length < 8) && (signo != -1 || signo2 != -1 || signo3 != -1)){
+                contraOk = true;
+            } else{
+                document.write("esta mal, ingresar de nuevo");
+                contraOk = false;
+            }
+
+        } while(!contraOk);
+
+
+        document.write("contraseña desencriptada: " + password + "</br>");
+        var newPassword = password.replaceAll("a", "4").replaceAll("e", "3").replaceAll("e", "3").replaceAll("i", "1")
+            .replaceAll("o", "0").replaceAll("u", "2");
+        document.write("contraseña encriptada: " + newPassword + "</br>");
+       
+    </script> 
+
+</body>
+
+</html>

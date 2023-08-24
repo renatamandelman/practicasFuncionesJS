@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>10-08 - practicas</title>
+    </head>
+    <body>
+<!-- <script>
+/*Escribir un código que genere 5 rondas de dos jugadores en un juego de dados.
+En cada ronda, cada jugador lanzará un dado de 6 caras y se imprimirá en pantalla el resultado de cada lanzamiento, 
+indicando cuál jugador obtuvo el resultado más alto en cada ronda, de la siguiente manera:*/
+var jugador1;
+var jugador2;
+
+for(var i = 1; i<=5;i++){
+    document.write("<h3> ronda:" + i + "</h3></br>");
+    jugador1 = Math.floor(Math.random() * ((6-1)+ 1) + 1);
+    jugador2 =Math.floor(Math.random() * ((6-1)+ 1) + 1);
+    document.write("<span style = 'color:red'; > jugador 1:" + jugador1 +"</span> </br> ");
+    document.write("<span style='color:blue'>jugador 2:" + jugador2 + "</span> </br> ");
+    
+    if(jugador1> jugador2){
+            document.write("Jugador 1 Gana");
+        } else if(jugador1 == jugador2){
+            document.write("Empate")
+        }
+        else{
+            document.write("jugador 2 gana");
+        }
+document.write("</br>");
+}
+    
+
+</script> -->
+
+<script>/*Ejercicio #2 - Modificando frases
+Solicitar al usuario una frase que contenga varias palabras y al menos una coma, luego resolver:
+1. Imprimir la frase original y su longitud.
+2. Imprimir todas las palabras que están después de la
+primera coma.
+3. Imprimir los primeros 3 caracteres de la primera palabra.
+4. Pedir una palabra nueva al usuario y reemplazar la primera palabra por la nueva. Imprimir la frase completa en mayúsculas.
+5. Generar un número random entre 150 y 400 y agregarlo
+exactamente a la mitad de la frase.
+6. Pedir al usuario que ingrese una frase y mostrarla en pantalla con el primer carácter en mayúscula, y el resto en minúscula.*/
+//1er punto
+var frase = prompt("ingrese una frase con al menos una coma");
+var longitud = frase.length;
+document.write(frase + "su longitud es: " + longitud + "</br>")
+//2do punto
+var posicionComa= frase.indexOf(","); 
+document.write(frase.substring(posicionComa + 1) + "</br>");
+//3er punto
+document.write(frase.substring(0,3) + "</br>");
+//4to punto
+var palabra = prompt("ingrese una palabra");
+var posicionPrimera = frase.indexOf(" ")
+var primeraPalabra = frase.substring(0, posicionPrimera)
+console.log(palabra)
+frase = frase.replace(primeraPalabra, palabra)
+document.write(frase.toUpperCase() + "</br>");
+//5to punto
+var numeroRandom = Math.floor((Math.random() * ((400-150) + 1) + 150))
+var numeroMitad = frase.length/2;
+document.write(frase.substring(0, numeroMitad) +"" + numeroRandom + ""+ frase.substring(numeroMitad) + "</br>");
+//6to punto
+var frase2 = prompt("ingrese una frase");
+var primeraLetra = frase2.substring(0,1);
+document.write(primeraLetra.toUpperCase() +""+ frase2.substring(1))
+
+
+</script>
+    </body>
+</html>
