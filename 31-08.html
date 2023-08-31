@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+     <script>
+    // Ejercicio 2 - random de metodos
+    /* Armar un script que deuvelve el nombre de un integrante 
+    del curso por cada metodo de manera aleatoria
+Métodos: reduce, reverse, some, sort, every, filter, find, includes, isArray, lastIndexOf, map, toString, at
+Participantes: Joaquin, Felipe, Kevin, Santiago, Barbara, Tiago, Nicolas, Francisco, Lola, Julian, Ramona, Ignacio Laluz, Ignacio Luna, Abril, Tobias, Avril, Brisa, Luz, Micaela
+    */
+var metodos = [ "reduce", "reverse", "some", "sort", "every", "filter", "find", "includes", "isArray", "lastIndexOf", "map", "toString", "at"];
+var participantes= ["Joaquin", "Felipe", "Kevin", "Santiago", "Barbara", "Tiago", "Nicolas", "Francisco", "Lola", "Julian", "Ramona", "Ignacio Laluz", "Ignacio Luna", "Abril", "Tobias", "Avril", "Brisa", "Luz", "Micaela"];
+var longitudM = metodos.length;
+var randomM;
+var randomP;
+
+for( var i = 0; i <= longitudM - 1; i++){
+    //hago los randoms
+ randomM = Math.round(Math.random() * metodos.length );
+ randomP = Math.round(Math.random() * metodos.length );
+ 
+ document.write("Metodo:" + metodos[randomM] + "</br>  Participante:" + participantes[randomP] + "</br> </br>");
+// busco posicion 
+metodos.splice(randomM, 1);
+participantes.splice(randomP,1);
+
+}
+    </script> 
     <script>
-        
+        /* Ejercicio 3:
+    Armar un script que tenga 10 marcas de ropa y muestre en pantalla */
+        var marcas = ["HyM", "Zara", "Forever 21", "Adidas", "Nike", "Puma", "Reebok", "Chanel", "Gucci", "Levis"];
+        // marca numero 3
+        document.write(marcas[3]);
+        // marcas en las posiciones pares
+        for (var i = 2; i < marcas.length; i++) {
+            if ((i % 2) === 0) {
+                document.write("<br>" + marcas[i])
+            }
+        };
+        // marcas a partir de la posicion 5
+        document.write("</br>" + marcas.slice(5));
+        // mostrar si existe Nike o no
+        if (marcas.indexOf("Nike") != -1) {
+            document.write("<br> Existe");
+        }
+        //pedir al usuario un orden (inicio o fin) y una nueva marca, guardala en la posicion que indico el usuario
+        var posicion = prompt("inicio o fin");
+        var marca = prompt("ingrese una marca");
+        if (posicion == "inicio") {
+            marcas.unshift(marca);
+        } else if (posicion == "fin") {
+            marcas.push(marca);
+        } else {
+            document.write("no se sabe si es inicio o fin");
+        }
+        // mostrar todas las marcas del array separadas por un renglon
+        document.write("</br>" + marcas.join("</br>"));
     </script>
-    
+
 </body>
+
 </html>
