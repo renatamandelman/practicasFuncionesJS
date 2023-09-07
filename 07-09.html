@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*Ejercicio #2 - Arrays
+Hacer un programa que pida nombre y teléfono a diez personas y guardar cada información en un array separado.
+Al finalizar el programa:
+1. Mostrar en pantalla un listado de cada nombre seguido de su teléfono, uno por renglón.
+2. Pedir al usuario que ingrese un nombre y mostrar su
+teléfono correspondiente.*/
+
+var nombres=[];
+var telefonos =[];
+
+for(var i = 0; i < 10; i++){
+    nombres[i]=(prompt("Ingrese Nombre"));
+    telefonos[i]= (prompt("Ingrese Telefono"));
+    document.write("Nombre: " + nombres[i] + "</br>" + "Telefono: " + telefonos[i] + "</br>");
+}
+var nombrePedido;
+console.log(nombres)
+
+do{
+   nombrePedido = prompt("ingrese un nombre")
+  var encontrar = nombres.indexOf(nombrePedido)
+  if(encontrar != -1){
+    document.write("El telefono de " + nombrePedido+ " es:" + telefonos[encontrar]);
+  }
+  
+} while(!nombres.includes(nombrePedido))
+    </script>
+    
+</body>
+</html>
