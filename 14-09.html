@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+/* Ejercicio 3 - Arrays multidimensionales
+Agregar apellido y transformar todo en un array multidimensional
+*/
+var nombre;
+var apellido;;
+var telefono;
+var todo = [];
+
+for(var i = 0; i < 2; i++){
+    nombre = prompt("ingrese un nombre");
+    apellido = prompt("Ingrese su apellido")
+    telefono = prompt("Ingree su telefono")
+
+    todo[i] = [nombre,apellido,telefono] ;
+    
+    document.write(todo[i].join('|') + "</br>");
+}
+
+    </script> -->
+<script>
+/* ejercicio 4 meter en una tabla de html */
+var nombre;
+var apellido;;
+var telefono;
+var todo = [];
+var fila;
+
+for(var i = 0; i < 2; i++){
+    nombre = prompt("ingrese un nombre");
+    apellido = prompt("Ingrese su apellido")
+    telefono = prompt("Ingree su telefono")
+
+    todo[i] = [nombre,apellido,telefono] ;
+    for(var j = 0; j < todo.length;j++){
+       fila = "<td>"+todo[i][j]+"</td>"
+
+    }
+
+
+}
+document.write(
+    "<table border='solid' width ='50%'>" +
+        "<tr> Nombre </tr>" +
+        "<tr> Apellido </tr>" +
+        "<tr> Telefono </tr>" +
+        fila);
+
+
+</script>
+</body>
+</html>
