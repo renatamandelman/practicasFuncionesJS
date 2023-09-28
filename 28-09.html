@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="cargo()">
+    <!-- <ul>
+        <li class="colores" onclick="color('blue')">Azul</li>
+        <li class="colores" onclick="color('red')">Rojo</li>
+        <li class="colores" onclick="color('turquoise')">Turquesa</li>
+        <li class="colores" onclick="color('green')">Verde</li>
+
+    </ul>
+    <script>
+        function color(color){
+            console.log("Ejecutaste el evento onclick en el color" + color);
+        }
+
+    </script> -->
+
+<!--Ejercicio #1 - Revelando data
+Realizar dos versiones de un script que permita mostrar un mensaje determinado al hacer click en un botón.
+Una versión hacerla sobre el mismo elemento HTML y otra separando la lógica de la estructura. 
+<button onclick="mensaje()">Click me!</button><br/>
+<p id="mensaje"> </p>
+
+<script>
+    //version 1
+    function mensaje(){
+    document.write("Hola como estas");
+    }
+    // version 2
+var boton = document.getElementById("mensaje");
+function mensaje(){
+     boton.innerHTML ="¡Has hecho clic!";
+ }
+
+</script> -->
+<!-- Ejercicio #3 - realizar un script que luego de asegurarse que se haga cargo la pagina,
+permita reemplazar una imagen por otra mediante la interaccion del usuario-->
+ <img id="img" onmouseover="cambioImagen()" onmouseout="cambioImagen2()" src="https://i.blogs.es/6f44dd/google-2015-1/1366_2000.jpg"/>
+
+
+<script>
+ function cargo() {
+  alert('La página terminó de cargar');
+}
+function cambioImagen(){
+   document.getElementById("img").setAttribute("src","https://tn.com.ar/resizer/oHh52Ss_mGLqP-bMM2ELcZMPpfg=/767x0/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/artear/Y4ORDF7GOCJSR6OEY74JF3CO3E.jpg");
+}
+function cambioImagen2(){
+   document.getElementById("img").setAttribute("src","https://i.blogs.es/6f44dd/google-2015-1/1366_2000.jpg");
+}
+</script>
+</body>
+</html>
