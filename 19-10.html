@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div style="justify-content: center;display:flex ;margin-top:2em;">
+  <form class="" style="width: 20%; ">
+    <div class="mb-3">
+        <label for="Input1" class="form-label" value="">Ingrese precio original del producto</label>
+        <input type="number" class="form-control" id="Input1" placeholder="$">
+      </div>
+      <div class="mb-3">
+        <label for="Input2" class="form-label" value="">Ingrese descuento a aplicar</label>
+        <input type="number" class="form-control" id="Input2" placeholder="$">
+      </div>
+      <div class="mb-3">
+        <button type="button" class="btn btn-primary mb-3">Ingresar</button>
+      </div>
+  </form>  
+
+</div>
+<p style="text-align: center;"> </p>
+<script>
+    document.querySelector("button").onclick =function(){
+    var precioOriginal = document.getElementById("Input1").value;
+    var descuento = document.getElementById("Input2").value;
+    
+    if(precioOriginal == "" || descuento == ""){
+        alert('Debe ingresar todos los campos');
+    }
+    else{
+        document.querySelector("p").innerHTML = "<span style='text-decoration:line-through;color:grey'> $" + precioOriginal +
+            "</span> <span style='font-weight:bold;'> $" + ((precioOriginal * descuento)/100) +
+             "</span><span style='color:green;'> (" + descuento+"% OFF) </span>"
+    }
+    
+    
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Etiqueta para adaptar a @media -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <!-- Enlace hoja estilos -->
+</head>
+<body>
+<!-- Empieza codigo calculadora html-->
+  <form name="calculator">
+    <h3>Calculadora </h3>
+    <input id="numero" type="text" name="numero" value="">
+    <br>
+    <button id="suma" type="button" value="suma"  > + </button>
+    <button id="resta" type="button" value="menos"  > -</button>
+    <button id="multiplicacion" type="button" value="multiplicacion" > *</button>
+    <button id="division" type="button" value="division" > /</button>
+    <button id="reset" type="button" value="reset" > reset</button>
+
+    <button id="igual" type="submit" value="igual" > = </button>
+    </form>
+
+    <script>
+      var numero1 ;
+      var numero2 ;
+      var operador;
+      var input =  document.querySelector("input") ;
+     
+
+        document.getElementById("suma").onclick = function (){
+          numero1 = parseInt(input.value);
+          operador = "suma";
+          input.value = "";
+        };
+        document.getElementById("resta").onclick = function (){
+          numero1 = parseInt(input.value);
+          operador = "resta";
+          input.value = "";
+        };
+        document.getElementById("multiplicacion").onclick = function (){
+          numero1 = parseInt(input.value);
+          operador = "multiplicacion";
+          input.value = "";
+        };
+        document.getElementById("division").onclick = function (){
+          numero1 = parseInt(input.value);
+          operador = "division";
+          input.value = "";
+        };
+
+        document.getElementById("igual").onclick = function (){
+          numero2 = parseInt(input.value)
+          
+          if (operador == 'suma') {
+             input.value =  numero1 + numero2 ;
+        }if(operado == 'resta'){
+          input.value =  numero1 - numero2 ;
+        }  if(operador == 'multiplicacion'){
+          input.value =  numero1 * numero2 ;
+        } if (operador == 'division'){
+          input.value =  numero1 / numero2 ;
+        } 
+      }
+
+      
+
+    </script>
+</body>
+</html>
